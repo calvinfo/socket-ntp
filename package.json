@@ -1,0 +1,21 @@
+{
+  "name": "socket-ntp",
+  "version": "0.0.1",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "3.0.2",
+    "jade": "*",
+    "socket.io": "*",
+    "underscore": "~1.4.2",
+  },
+  "engines": {
+    "node": "0.8.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:calvinfo/socket-ntp.git"
+  }
+}
