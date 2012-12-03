@@ -2,8 +2,11 @@
   "name": "socket-ntp",
   "version": "0.0.1",
   "main": "lib/ntp",
+  "description": "NTP syncing algorithm between client and server using socket.io",
+  "keywords": ["ntp", "socket", "socket.io"],
+  "author": "Calvin French-Owen <calvin@calv.info>",
   "scripts": {
-    "start": "node app.js"
+    "start": "node example/app.js"
   },
   "devDependencies": {
     "express": "3.0.2",
