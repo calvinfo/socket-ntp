@@ -3,6 +3,13 @@ socket-ntp
 
 NTP Sync using Socket.io. Allows you to sync clients against a server by calculating the time offset.
 
+## Installation
+
+```
+npm install socket-ntp
+```
+Requires access to [socket.io](http://socket.io/) connections on both the client and the server.
+
 ## Client usage
 
 On the client, include:
@@ -17,16 +24,11 @@ On the client, include:
   var socket = io.connect();
   ntp.init(socket);  
 
-  offset = ntp.offset(); // time offset from the server in ms 
+  var offset = ntp.offset(); // time offset from the server in ms 
 ```
 
 ## Server usage
 
-First, install the script:
-
-```
-npm install  socket-ntp
-```
 From anywhere that you have access to a socket.io instance.
 
 ```javascript
