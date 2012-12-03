@@ -1,8 +1,7 @@
 
-(function () {
+(function (root) {
 
-  var root = this
-    , ntp  = {}
+  var ntp  = {}
     , offsets = []
     , socket;
 
@@ -31,15 +30,17 @@
       sum += offsets[i];
 
     sum /= offsets.length;
+
+    return sum;
   };
 
 
   var sync = function () {
-    socket.emit('ntp:client_sync');
+    socket.emit('ntp:client_sync', { t0 : Date.now() });
   };
 
   // AMD/requirejs
-  if (typeof define !== 'undefined' && define.amd) {
+  if (typeof define === 'function' && define.amd) {
     define('ntp', [], function () {
       return ntp;
     });
@@ -47,4 +48,4 @@
     root.ntp = ntp;
   }
 
-})(ntp);
+})(window);

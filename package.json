@@ -1,15 +1,13 @@
 {
   "name": "socket-ntp",
   "version": "0.0.1",
-  "main": "app.js",
+  "main": "lib/ntp",
   "scripts": {
     "start": "node app.js"
   },
-  "dependencies": {
+  "devDependencies": {
     "express": "3.0.2",
-    "jade": "*",
-    "socket.io": "*",
-    "underscore": "~1.4.2",
+    "socket.io": "*"
   },
   "engines": {
     "node": "0.8.x"
