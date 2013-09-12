@@ -1,4 +1,3 @@
-
 (function (root) {
 
   var ntp  = {}
@@ -15,7 +14,7 @@
 
   var onSync = function (data) {
 
-    var diff = (data.t1 - data.t0) + (data.t1 - Date.now()) / 2;
+    var diff = Date.now() - data.t1 + ((Date.now() - data.t0)/2);
 
     offsets.unshift(diff);
 
