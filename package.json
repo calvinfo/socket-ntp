@@ -1,6 +1,6 @@
 {
   "name": "socket-ntp",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "lib/ntp",
   "description": "NTP syncing algorithm between client and server using socket.io",
   "keywords": ["ntp", "socket", "socket.io"],
@@ -11,9 +11,6 @@
   "devDependencies": {
     "express": "3.0.2",
     "socket.io": "*"
-  },
-  "engines": {
-    "node": "0.8.x"
   },
   "repository": {
     "type": "git",
