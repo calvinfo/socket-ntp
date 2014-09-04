@@ -8,7 +8,7 @@ var http      = require('http')
 var app    = express()
   , server = http.createServer(app)
   , io     = socketio.listen(server);
-io.set('log level', 1); // reduce logging
+DEBUG=''; //turn off heartbeat messages, socket.io 1.10 and later
 
 app.use(express.static(__dirname)); 
 app.use('/client', express.static('../client/')); 
@@ -16,3 +16,5 @@ app.use('/client', express.static('../client/'));
 io.sockets.on('connection', ntp.sync);
 
 server.listen(80);
+
+console.log ("Starting application on *:80");
