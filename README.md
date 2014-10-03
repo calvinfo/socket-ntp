@@ -3,6 +3,9 @@ socket-ntp
 
 NTP Sync using Socket.io. Allows you to sync clients against a server by calculating the time offset.
 
+With some changes/bugfixes by karaokeresarch to better accomidate mobile devices, eliminate outliers, chill out after 
+achieving a basic sync, etc.
+
 ## Installation
 
 ```

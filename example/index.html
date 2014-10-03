@@ -2,17 +2,17 @@
   <head>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/client/ntp.js"></script>
-
+    
     <script>
-
-      var socket = io.connect();
-	  ntp.init(socket);
+			var socket = io.connect();
+			ntp.init(socket);      
       
         setInterval(function () {
       	setTimeout(function(){
-	        document.getElementById("offset").innerHTML=  "Server time: " + (new Date().getTime() -ntp.offset()); //what time the server thinks it is
+	        document.getElementById("offset").innerHTML=  "Server time: " + (Date.now() -ntp.offset()); //what time the server thinks it is
 	        document.getElementById("offset").innerHTML+= "<p>Offset: " + ntp.offset();
-	        	},1000-(new Date().getTime() - ntp.offset())%1000); //update the display at our guess of where the server thinks a new second occurs
+	 
+	        	},( 1000-(Date.now() - ntp.offset())%1000));//update the display at our guess of where the server thinks a new second occurs
           },1000);
 	  
     </script>
@@ -20,5 +20,6 @@
   </head>
   <body>
     <span id="offset"></span>
+    
   </body>
 </html>

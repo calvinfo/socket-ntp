@@ -4,7 +4,6 @@ var http      = require('http')
   , socketio  = require('socket.io')
   , ntp       = require('../');
 
-
 var app    = express()
   , server = http.createServer(app)
   , io     = socketio.listen(server);
@@ -18,3 +17,4 @@ io.sockets.on('connection', ntp.sync);
 server.listen(80);
 
 console.log ("Starting application on *:80");
+

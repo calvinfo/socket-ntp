@@ -1,8 +1,8 @@
 {
   "name": "socket-ntp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "lib/ntp",
-  "description": "NTP syncing algorithm between client and server using socket.io",
+  "description": "Enhanced NTP syncing algorithm between client and server using socket.io",
   "keywords": ["ntp", "socket", "socket.io"],
   "author": "Calvin French-Owen <calvin@calv.info>",
   "scripts": {
@@ -14,6 +14,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:calvinfo/socket-ntp.git"
+    "url": "git@github.com:karaokeresearch/socket-ntp.git"
   }
 }
