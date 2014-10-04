@@ -1,9 +1,9 @@
 socket-ntp-krcmod
 ==========
 
-NTP Sync using Socket.io. Allows you to sync clients against a server.
+NTP Sync using Socket.io.  Provides current time on webserver as well as the client offset from the webserver.
 
-My take on Calvin French-Owen (calvinfo)'s concise socket-ntp.  Can be used as a drop in replacement.  
+My take on Calvin French-Owen (calvinfo)'s concise socket-ntp.  Can be used as a drop-in replacement.  
 
 I used the basic framework and made it needlessly more complicated :)
 
@@ -19,7 +19,7 @@ I used the basic framework and made it needlessly more complicated :)
 ## Installation
 
 ```
-npm install socket-ntp-karaokeresearch   <--- actually, don't do this. It's not in NTP yet.
+npm install socket-ntp-krcmod
 ```
 Requires access to [socket.io](http://socket.io/) connections on both the client and the server.
 
@@ -47,7 +47,7 @@ On the client, include:
 From anywhere that you have access to a socket.io instance.
 
 ```javascript
-var ntp = require('socket-ntp');                    <--- just use the example in the demo for now. Not in NTP yet.
+var ntp = require('socket-ntp-krcmod');
 
 io.sockets.on('connection', function (socket) {
   ntp.sync(socket);
