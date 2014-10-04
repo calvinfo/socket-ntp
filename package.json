@@ -16,6 +16,7 @@
     "express": ">=3.0.2",
     "socket.io": "*"
   },
+  "homepage": "https://github.com/karaokeresearch/socket-ntp-krcmod",
 	"bugs": "https://github.com/karaokeresearch/socket-ntp-krcmod/pulls",
 	"license": "MIT",
   "repository": {
