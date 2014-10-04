@@ -32,7 +32,7 @@
 				offsetsSorted.pop();
 			}
 		}
-		for (var i = 0; i < offsetsSorted.length; i++) {
+		for (var i = 0; i < offsetsSorted.length; i++) { //add up and average the 4 offset times associated with the lowest ping times
 			sum += offsetsSorted[i][1];
 		}
 
@@ -54,7 +54,7 @@
 		}
 	};
 
-	var sort2dArray = function (a, b) {
+	var sort2dArray = function (a, b) { //for sorting the 2d array by ping time
 		if (a[0] === b[0]) {
 			return 0;
 		}

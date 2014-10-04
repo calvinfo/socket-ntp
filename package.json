@@ -1,10 +1,14 @@
 {
-  "name": "socket-ntp",
-  "version": "0.1.1",
+  "name": "socket-ntp-krcmod",
+  "version": "0.2.0",
   "main": "lib/ntp",
   "description": "Enhanced NTP syncing algorithm between client and server using socket.io",
   "keywords": ["ntp", "socket", "socket.io"],
   "author": "Calvin French-Owen <calvin@calv.info>",
+  "contributors": [{
+		"name": "Ross Brackett",
+		"email": "krc@brassrocket.com"
+	}],
   "scripts": {
     "start": "node example/app.js"
   },
@@ -12,8 +16,10 @@
     "express": ">=3.0.2",
     "socket.io": "*"
   },
+	"bugs": "https://github.com/karaokeresearch/socket-ntp-krcmod/pulls",
+	"license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:karaokeresearch/socket-ntp.git"
+    "url": "git@github.com:karaokeresearch/socket-ntp-krcmod.git"
   }
 }
