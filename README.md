@@ -1,4 +1,4 @@
-socket-ntp
+socket-ntp-krcmod
 ==========
 
 NTP Sync using Socket.io. Allows you to sync clients against a server.
