@@ -1,21 +1,35 @@
-socket-ntp
+socket-ntp-krcmod
 ==========
 
-NTP Sync using Socket.io. Allows you to sync clients against a server by calculating the time offset.
+NTP Sync using Socket.io.  Provides current time on webserver as well as the client offset from the webserver.
+
+My take on Calvin French-Owen (calvinfo)'s concise socket-ntp.  Can be used as a drop-in replacement.  
+
+I used the basic framework and made it needlessly more complicated :)
+
+* Fixed how NTP is calculated, per suggestion of Mustafa Dokumaci (mstdokumaci)
+* Streamlined example. Includes a primitive scheduler for synchronizing events across multiple nodes
+* Lower ping times are valued over higher since there's less chance of error in the NTP calculation
+* Interrogates strong for 20 seconds, then throttles back to preserve resources
+* Socket.io client switched to the one automatically served by socket.io
+* We didn't really need jQuery in there
+* added ntp.serverTime() for us lazybones
+
 
 ## Installation
 
 ```
-npm install socket-ntp
+npm install socket-ntp-krcmod
 ```
 Requires access to [socket.io](http://socket.io/) connections on both the client and the server.
+
 
 ## Client usage
 
 On the client, include:
 
 ```html
-<script src="/javascripts/libs/socket.io.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
 <script src="/client/ntp.js"></script>
 ```
 
@@ -24,7 +38,8 @@ On the client, include:
   var socket = io.connect();
   ntp.init(socket);  
 
-  var offset = ntp.offset(); // time offset from the server in ms 
+  var offset = ntp.offset(); // time offset from the server in ms
+  var servertime = ntp.serverTime(); //what time is it on the server (equivalent to Date.now())
 ```
 
 ## Server usage
@@ -32,7 +47,7 @@ On the client, include:
 From anywhere that you have access to a socket.io instance.
 
 ```javascript
-var ntp = require('socket-ntp');
+var ntp = require('socket-ntp-krcmod');
 
 io.sockets.on('connection', function (socket) {
   ntp.sync(socket);

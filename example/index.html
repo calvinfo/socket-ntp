@@ -1,22 +1,25 @@
 <html>
   <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script src="/client/socket.io.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
     <script src="/client/ntp.js"></script>
-
+    
     <script>
-
-      var socket = io.connect();
-
-      ntp.init(socket);
-      setInterval(function () {
-        $('#offset').text(ntp.offset());
-      }, 1000);
+			var socket = io.connect();
+			ntp.init(socket);      
+      
+        setInterval(function () {
+	      	setTimeout(function(){
+		        document.getElementById("offset").innerHTML=  "Server time: " + ntp.serverTime(); //what time the server thinks it is
+		        document.getElementById("offset").innerHTML+= "<p>Offset: " + ntp.offset();
+		 
+		      },( 1000-(Date.now() - ntp.offset())%1000));//update the display at our guess of where the server thinks a new second occurs
+        },1000);
+	  
     </script>
-
 
   </head>
   <body>
     <span id="offset"></span>
+    
   </body>
 </html>
