@@ -14,7 +14,7 @@
 
   var onSync = function (data) {
 
-    var diff = Date.now() - data.t1 + ((Date.now() - data.t0)/2);
+    var diff = Date.now() - data.t1 - ((Date.now() - data.t0)/2);
 
     offsets.unshift(diff);
 
