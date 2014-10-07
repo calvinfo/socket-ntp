@@ -7,12 +7,12 @@ My take on Calvin French-Owen (calvinfo)'s concise socket-ntp.  Can be used as a
 
 I used the basic framework and made it needlessly more complicated :)
 
-* Streamlined example. Includes a primitive scheduler for synchronizing events across multiple nodes
 * Lower ping times are valued over higher since there's less chance of error in the NTP calculation
 * Interrogates strong for 20 seconds, then throttles back to preserve resources
-* Socket.io client switched to the one automatically served by socket.io
-* We didn't really need jQuery in there
 * added ntp.serverTime() for us lazybones
+* Demo: Streamlined the express code. Added a primitive scheduler for synchronizing events across multiple nodes
+* Demo: Socket.io client switched to the one automatically served by socket.io
+* Demo: We didn't really need jQuery in there
 
 
 ## Installation
