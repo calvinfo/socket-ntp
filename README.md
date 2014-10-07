@@ -7,7 +7,6 @@ My take on Calvin French-Owen (calvinfo)'s concise socket-ntp.  Can be used as a
 
 I used the basic framework and made it needlessly more complicated :)
 
-* Fixed how NTP is calculated, per suggestion of Mustafa Dokumaci (mstdokumaci)
 * Streamlined example. Includes a primitive scheduler for synchronizing events across multiple nodes
 * Lower ping times are valued over higher since there's less chance of error in the NTP calculation
 * Interrogates strong for 20 seconds, then throttles back to preserve resources
