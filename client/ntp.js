@@ -1,5 +1,4 @@
 (function (root) {
-
   var ntp  = {}
     , offsets = []
     , socket;
@@ -14,7 +13,7 @@
 
   var onSync = function (data) {
 
-    var diff = Date.now() - data.t1 - ((Date.now() - data.t0)/2);
+    var diff = Date.now() - data.t1 + ((Date.now() - data.t0)/2);
 
     offsets.unshift(diff);
 
@@ -43,7 +42,18 @@
     define('ntp', [], function () {
       return ntp;
     });
-  } else {
+
+  }
+
+  //Node and CommonJS
+  else if (typeof exports !== 'undefined') {
+    if(typeof module !== 'undefined' && module.exports) {
+      module.exports = ntp
+    }
+    exports.ntp = ntp
+  }
+
+  else {
     root.ntp = ntp;
   }
 
