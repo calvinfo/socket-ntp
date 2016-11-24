@@ -24,11 +24,12 @@
 
   ntp.offset = function () {
     var sum = 0;
-    for (var i = 0; i < offsets.length; i++)
-      sum += offsets[i];
-
-    sum /= offsets.length;
-
+    for (var i = 0; i < offsets.length; i++) {
+      sum += offsets[i]
+    }
+    if(offsets.length > 0) {
+      sum /= offsets.length
+    }
     return sum;
   };
 
